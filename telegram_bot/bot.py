@@ -1,4 +1,6 @@
-from os import getenv
+import random
+
+from os import getenv, sys
 
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
@@ -13,8 +15,13 @@ dp = Dispatcher()
 
 
 @dp.message(CommandStart())
-async def command_start_handle(message: Message) -> None:
+async def command_start_handler(message: Message) -> None:
     await message.answer("hi")
+
+
+@dp.message()
+async def echo_handler(message: Message) -> None:
+    await message.answer(f"test#{random.randint(-sys.maxsize-1, sys.maxsize)}")
 
 
 async def run() -> None:
