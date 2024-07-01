@@ -3,4 +3,4 @@
 
 from os import getenv
 
-bot_token = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN")
