@@ -1,30 +1,14 @@
-import random
+from telegram.ext import ApplicationBuilder
 
-from os import getenv, sys
-
-from aiogram import Bot, Dispatcher
-from aiogram.client.default import DefaultBotProperties
-from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart
-from aiogram.types import Message
+from .handlers import EchoHandler, StartHandler
 
 
-TOKEN = getenv("BOT_TOKEN")
+def run(bot_token):
+    application = ApplicationBuilder().token(bot_token).build()
+    start_handler = StartHandler()
+    echo_handler = EchoHandler()
 
-dp = Dispatcher()
+    application.add_handler(start_handler.handle)
+    application.add_handler(echo_handler.handle)
 
-
-@dp.message(CommandStart())
-async def command_start_handler(message: Message) -> None:
-    await message.answer("hi")
-
-
-@dp.message()
-async def echo_handler(message: Message) -> None:
-    await message.answer(f"test#{random.randint(-sys.maxsize-1, sys.maxsize)}")
-
-
-async def run() -> None:
-    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-
-    await dp.start_polling(bot)
+    application.run_polling()
