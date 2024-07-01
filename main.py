@@ -1,7 +1,7 @@
 import logging
 
 from config import BOT_TOKEN
-from telegram_bot import bot
+from telegram_bot import Bot
 
 
 logging.basicConfig(
@@ -9,4 +9,4 @@ logging.basicConfig(
 )
 
 if __name__ == "__main__":
-    bot.run(BOT_TOKEN)
+    bot = Bot(BOT_TOKEN)
