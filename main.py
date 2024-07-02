@@ -1,7 +1,8 @@
 import logging
 
-from config import BOT_TOKEN
+from config import BOT_TOKEN, CLIENT_ID, AUTH_TOKEN
 from telegram_bot import Bot
+from twitch_drops_overseer import Overseer
 
 
 logging.basicConfig(
@@ -10,3 +11,5 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     bot = Bot(BOT_TOKEN)
+    overseer = Overseer(CLIENT_ID, AUTH_TOKEN)
+    overseer.get_drop_campaigns()
