@@ -1,8 +1,8 @@
 import logging
 
 from config import BOT_TOKEN, CLIENT_ID, AUTH_TOKEN
-from telegram_bot import Bot
-from twitch_drops_overseer import Overseer
+from telegram_bot.bot import Bot
+from twitch_drops_overseer.overseer import Overseer
 
 
 logging.basicConfig(
