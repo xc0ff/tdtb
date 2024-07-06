@@ -32,13 +32,13 @@ class BaseHandler:
 
     @property
     def description(self) -> str:
-        """Get description of a handler. Used in setting up of a command."""
+        """Get description of a handler. Used in command setup."""
         return self._description
 
     @abstractmethod
     async def callback(self, update: Update, _) -> None:
-        """Print help message."""
+        """Base handler callback."""
 
-    async def send_message(self, update: Update, text: str) -> None:
+    async def _send_message(self, update: Update, text: str) -> None:
         """TODO: docsting"""
         await update.message.reply_text(text)

@@ -17,4 +17,4 @@ class HelpHandler(BaseHandler):
 
     async def callback(self, update: Update, _) -> None:
         """TODO: docstring"""
-        await self.send_message(update=update, text="Ha-ha, nothing can help you (yet).")
+        await self._send_message(update=update, text="Ha-ha, nothing can help you (yet).")

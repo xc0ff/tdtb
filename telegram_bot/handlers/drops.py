@@ -7,6 +7,7 @@ from .base import BaseHandler
 
 class DropsHandler(BaseHandler):
     """TODO: docstring"""
+
     def __init__(self):
         super().__init__(
             name="drops",
