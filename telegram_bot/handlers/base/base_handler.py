@@ -13,8 +13,8 @@ class BaseHandler:
     def __init__(
         self,
         name: str,
+        callback: CommandHandler,
         description: Optional[str] = None,
-        callback: Optional[CommandHandler] = None,
     ):
         self._name = name
         self._description = description
