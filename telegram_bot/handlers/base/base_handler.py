@@ -1,7 +1,9 @@
 """Base class with the most common properties of handlers."""
 
+from abc import abstractmethod
 from typing import Optional
 
+from telegram import Update
 from telegram.ext import CommandHandler
 
 
@@ -33,5 +35,10 @@ class BaseHandler:
         """Get description of a handler. Used in setting up of a command."""
         return self._description
 
-    async def callback(self) -> None:
-        """Handler's callback function."""
+    @abstractmethod
+    async def callback(self, update: Update, _) -> None:
+        """Print help message."""
+
+    async def send_message(self, update: Update, text: str) -> None:
+        """TODO: docsting"""
+        await update.message.reply_text(text)
