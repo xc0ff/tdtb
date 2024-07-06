@@ -1,13 +1,16 @@
+"""Start command handler class."""
+
 from telegram import Update
-from telegram.ext import ContextTypes, CommandHandler
+
+from .base import BaseHandler
 
 
-class StartHandler:
-    def __init__(self) -> None:
-        self.handle = CommandHandler("start", self.start)
+class StartHandler(BaseHandler):
+    """Start command handler class."""
 
-    async def start(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        await context.bot.send_message(
-            chat_id=update.effective_chat.id,
-            text=f"hi",
-        )
+    def __init__(self):
+        super().__init__(name="start", callback=self.callback)
+
+    async def callback(self, update: Update, _) -> None:
+        """TODO: docstring"""
+        await self.send_message("hi. see /help for more info.")

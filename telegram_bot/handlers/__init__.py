@@ -1,7 +1,13 @@
+"""A module containing all the handlers of the bot."""
+
 __all__ = (
     "StartHandler",
-    "EchoHandler",
+    "HelpHandler",
+    "SettingsHandler",
+    "DropsHandler",
 )
 
 from .start import StartHandler
-from .echo import EchoHandler
+from .help import HelpHandler
+from .settings import SettingsHandler
+from .drops import DropsHandler
