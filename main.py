@@ -11,5 +11,5 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     bot = Bot(BOT_TOKEN)
-    overseer = Overseer(CLIENT_ID, AUTH_TOKEN)
-    overseer.get_drop_campaigns()
+    # overseer = Overseer(CLIENT_ID, AUTH_TOKEN)
+    # overseer.get_drop_campaigns()
