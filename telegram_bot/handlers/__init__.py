@@ -5,9 +5,11 @@ __all__ = (
     "HelpHandler",
     "SettingsHandler",
     "DropsHandler",
+    "NotificationsHandler"
 )
 
 from .start import StartHandler
 from .help import HelpHandler
 from .settings import SettingsHandler
 from .drops import DropsHandler
+from .notifications import NotificationsHandler
