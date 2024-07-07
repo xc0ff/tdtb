@@ -1,8 +1,9 @@
+"""TODO: docstring"""
+
 import logging
 
-from config import BOT_TOKEN
-from telegram_bot.bot import Bot
-from twitch_drops_overseer.overseer import Overseer
+from bot import Bot
+
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -12,7 +13,6 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 
 logger = logging.getLogger(__name__)
 
+
 if __name__ == "__main__":
-    bot = Bot(BOT_TOKEN)
-    # overseer = Overseer(CLIENT_ID, AUTH_TOKEN)
-    # overseer.get_drop_campaigns()
+    bot = Bot()
