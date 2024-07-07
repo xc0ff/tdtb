@@ -15,6 +15,7 @@ from .handlers import (
     NotificationsHandler,
     InlineDropsHandler,
 )
+from .utils import constants
 
 logger = logging.getLogger(__name__)
 
@@ -22,9 +23,7 @@ logger = logging.getLogger(__name__)
 class Bot:
     """Main class for the bot"""
 
-    def __init__(self, token):
-        self._token = token
-
+    def __init__(self):
         self._commands = SimpleNamespace(
             help=SimpleNamespace(
                 name=HelpHandler().name,
@@ -45,7 +44,7 @@ class Bot:
         )
 
         self._application = (
-            ApplicationBuilder().token(self._token).post_init(self._post_init).build()
+            ApplicationBuilder().token(constants.BOT_TOKEN).post_init(self._post_init).build()
         )
 
         self._application.add_handlers(
