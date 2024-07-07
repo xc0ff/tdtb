@@ -13,12 +13,12 @@ class BaseHandler:
     def __init__(
         self,
         name: str,
-        callback: CommandHandler,
+        # callback: CommandHandler,
         description: Optional[str] = None,
     ):
         self._name = name
         self._description = description
-        self._handle = CommandHandler(self._name, callback)
+        self._handle = CommandHandler(self._name, self.callback)
 
     @property
     def handle(self):
@@ -39,6 +39,6 @@ class BaseHandler:
     async def callback(self, update: Update, _) -> None:
         """Base handler callback."""
 
-    async def _send_message(self, update: Update, text: str) -> None:
+    async def _send_message(self, update: Update, text: str, *args, **kwargs) -> None:
         """TODO: docsting"""
-        await update.message.reply_text(text)
+        await update.message.reply_text(text, *args, **kwargs)

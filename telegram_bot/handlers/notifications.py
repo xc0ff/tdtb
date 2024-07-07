@@ -21,7 +21,6 @@ class NotificationsHandler(BaseHandler):
         super().__init__(
             name="notificator",
             description="turn notifications on or off",
-            callback=self.callback,
         )
 
     async def _timer_callback(self, context: ContextTypes.DEFAULT_TYPE):

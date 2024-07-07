@@ -12,7 +12,6 @@ class HelpHandler(BaseHandler):
         super().__init__(
             name="help",
             description="get some help",
-            callback=self.callback,
         )
 
     async def callback(self, update: Update, _) -> None:

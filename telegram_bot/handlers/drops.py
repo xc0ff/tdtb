@@ -12,7 +12,6 @@ class DropsHandler(BaseHandler):
         super().__init__(
             name="drops",
             description="get current drops for games from your list",
-            callback=self.callback,
         )
 
     async def callback(self, update: Update, _) -> None:
