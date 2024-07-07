@@ -14,5 +14,5 @@ class DropsHandler(BaseHandler):
             description="get current drops for games from your list",
         )
 
-    async def callback(self, update: Update, _) -> None:
+    async def _callback(self, update: Update, _) -> None:
         """TODO: docstring"""

@@ -11,6 +11,6 @@ class StartHandler(BaseHandler):
     def __init__(self):
         super().__init__(name="start")
 
-    async def callback(self, update: Update, _) -> None:
+    async def _callback(self, update: Update, _) -> None:
         """TODO: docstring"""
         await self._send_message(update=update, text="hi. see /help for more info.")

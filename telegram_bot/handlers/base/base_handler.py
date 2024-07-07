@@ -18,7 +18,7 @@ class BaseHandler:
     ):
         self._name = name
         self._description = description
-        self._handle = CommandHandler(self._name, self.callback)
+        self._handle = CommandHandler(self._name, self._callback)
 
     @property
     def handle(self):
@@ -36,7 +36,7 @@ class BaseHandler:
         return self._description
 
     @abstractmethod
-    async def callback(self, update: Update, _) -> None:
+    async def _callback(self, update: Update, _) -> None:
         """Base handler callback."""
 
     async def _send_message(self, update: Update, text: str, *args, **kwargs) -> None:

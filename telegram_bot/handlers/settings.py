@@ -26,13 +26,15 @@ class SettingsHandler(BaseHandler):
 
     @property
     def query_handle(self):
+        """TODO: docstring"""
         return self._query_handle
 
-    async def callback(self, update: Update, _) -> None:
+    async def _callback(self, update: Update, _) -> None:
         """TODO: docstring"""
         await self._send_message(update=update, text="Choose: ", reply_markup=self._reply_markup)
 
     async def button(self, update: Update, _) -> None:
+        """TODO: docstring"""
         query = update.callback_query
 
         # CallbackQueries need to be answered, even if no notification to the user is needed

@@ -39,11 +39,12 @@ class NotificationsHandler(BaseHandler):
             job.schedule_removal()
         return True
 
-    async def callback(
+    async def _callback(
         self,
         update: Update,
         context: ContextTypes.DEFAULT_TYPE,
     ) -> None:
+        """TODO: docstring"""
         chat_id = update.message.chat_id
 
         job_removed = self._remove_job_if_exists(str(chat_id), context)
