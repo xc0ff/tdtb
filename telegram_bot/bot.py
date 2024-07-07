@@ -15,7 +15,6 @@ from .handlers import (
     NotificationsHandler,
 )
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -53,6 +52,7 @@ class Bot:
                 StartHandler().handle,
                 HelpHandler().handle,
                 SettingsHandler().handle,
+                SettingsHandler().query_handle,
                 DropsHandler().handle,
                 NotificationsHandler().handle,
             ]
